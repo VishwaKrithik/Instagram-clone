@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* @custom-variant dark (&:is(.dark *)); */
+
+@layer base {
+  :root {
+    /* Light mode */
+    /* --background: rgba(0, 0, 0, 100); */
+    /* --background: 0 0% 100%; white */
+    --foreground: 222.2 84% 4.9%; /* dark text */
+    --primary: black;
+  }
+
+  .dark {
+    /* Dark mode */
+    --background: rgba(0, 0, 0, 100);
+    /* --background: 222.2 84% 4.9%;  */
+    /* dark gray */
+    --foreground: 210 40% 98%; /* light text */
+  }
+}
+
