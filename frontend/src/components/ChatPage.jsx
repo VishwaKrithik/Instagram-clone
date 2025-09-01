@@ -19,7 +19,7 @@ const ChatPage = () => {
 
   const sendMessageHandler = async () => {
     try {
-      const res = await axios.post(`http://localhost:8000/api/v1/message/send/${selectedChatter?._id}`, { textMessage }, {
+      const res = await axios.post(`https://instagram-clone-w149.onrender.com/api/v1/message/send/${selectedChatter?._id}`, { textMessage }, {
         headers: {
           "Content-Type": "application/json",
         },

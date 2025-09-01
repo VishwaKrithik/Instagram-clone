@@ -38,7 +38,7 @@ const Post = ({ post }) => {
 
   const deletePostHandler = async () => {
     try {
-      const res = await axios.delete(`http://localhost:8000/api/v1/post/delete/${post?._id}`, { withCredentials: true });
+      const res = await axios.delete(`https://instagram-clone-w149.onrender.com/api/v1/post/delete/${post?._id}`, { withCredentials: true });
       if (res.data.success) {
         const updatedPosts = posts.filter((postItem) => postItem?._id != post?._id)
         dispatch(setPost(updatedPosts));
@@ -51,7 +51,7 @@ const Post = ({ post }) => {
 
   const likeOrDislikePostHandler = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/api/v1/post/${post._id}/toggleLike`, { withCredentials: true });
+      const res = await axios.get(`https://instagram-clone-w149.onrender.com/api/v1/post/${post._id}/toggleLike`, { withCredentials: true });
       if (res.data.message == "Post liked") {
         setLiked(true);
         const updatedPosts = posts.map((postEntry) =>
@@ -80,7 +80,7 @@ const Post = ({ post }) => {
 
   const addCommentHandler = async () => {
     try {
-      const res = await axios.post(`http://localhost:8000/api/v1/post/${post._id}/comment`, { content: text }, {
+      const res = await axios.post(`https://instagram-clone-w149.onrender.com/api/v1/post/${post._id}/comment`, { content: text }, {
         headers: {
           "Content-Type": "application/json"
         },
@@ -107,7 +107,7 @@ const Post = ({ post }) => {
 
   const bookmarkHandler = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/api/v1/post/${post._id}/bookmark`, { withCredentials: true });
+      const res = await axios.get(`https://instagram-clone-w149.onrender.com/api/v1/post/${post._id}/bookmark`, { withCredentials: true });
       console.log(res);
       if(res.data.success) {
         toast.success(res.data.message);

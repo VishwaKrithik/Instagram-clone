@@ -35,7 +35,7 @@ const CommentDialog = ({ open, setOpen }) => {
 
   const deletePostHandler = async () => {
     try {
-      const res = await axios.delete(`http://localhost:8000/api/v1/post/delete/${selectedPost?._id}`, { withCredentials: true });
+      const res = await axios.delete(`https://instagram-clone-w149.onrender.com/api/v1/post/delete/${selectedPost?._id}`, { withCredentials: true });
       if (res.data.success) {
         const updatedPosts = posts.filter((postItem) => postItem?._id != selectedPost?._id)
         dispatch(setPost(updatedPosts));
@@ -48,7 +48,7 @@ const CommentDialog = ({ open, setOpen }) => {
 
   const sendMessageHandler = async () => {
     try {
-      const res = await axios.post(`http://localhost:8000/api/v1/post/${selectedPost._id}/comment`, { content: text }, {
+      const res = await axios.post(`https://instagram-clone-w149.onrender.com/api/v1/post/${selectedPost._id}/comment`, { content: text }, {
         headers: {
           "Content-Type": "application/json"
         },
